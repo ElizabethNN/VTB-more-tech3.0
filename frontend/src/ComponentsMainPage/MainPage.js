@@ -7,8 +7,12 @@ function MainPage() {
     return (
         <BrowserRouter>
             <div>
-                <Button><Route path="/AvailableData" component={AvailableData}/> Доступные данные</Button>
-                <Button><Route path="/CreateData" component={CreateData}/> Создание фичи</Button>
+                <Button href="/AvailableData">Доступные данные</Button>
+                <Button href="/CreateData">Создание фичи</Button>
+            </div>
+            <div>
+                <Route path="/AvailableData" component={AvailableData}/>
+                <Route path="/CreateData" component={CreateData}/>
             </div>
         </BrowserRouter>
     );

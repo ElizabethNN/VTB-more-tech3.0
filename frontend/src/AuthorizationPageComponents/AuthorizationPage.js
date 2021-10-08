@@ -1,5 +1,5 @@
 import './AuthorizationPage.css';
-import { Button, Autocomplete, TextField, Grid, Box } from '@mui/material';
+import { Button, TextField, Grid, Box } from '@mui/material';
 
 function AuthorizationPage() {
   return (
