@@ -5,13 +5,12 @@ import AvailableData from "../AvailableDataPage/AvailableData";
 import SendData from "../SendDataPage/SendData";
 import AnalizeData from "../AnalizeDataPage/AnalizeData";
 import LogButtonGroup from "../LogButtonGroup";
-import InfoCard from "../AvailableDataPage/InfoCard/InfoCard";
 
 function MainPage() {
   return (
     <Container maxWidth="lg">
       <BrowserRouter>
-        <Grid container spacing={2} justifyContent="space-between">
+        <Grid container spacing={2} justifyContent="space-between" mt={4}>
           <Grid item xs={10}>
             <ButtonGroup
               variant="text"
