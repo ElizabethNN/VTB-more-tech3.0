@@ -1,11 +1,11 @@
 import { Button } from '@mui/material';
 
-function AvailableData() {
+function AnalizeData() {
     return (
         <div>
-            AvailableData
+            AnalizeData
         </div>
     );
 }
 
-export default AvailableData;
+export default AnalizeData;
