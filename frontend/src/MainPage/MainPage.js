@@ -4,7 +4,8 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import AvailableData from "../AvailableDataPage/AvailableData";
 import SendData from '../SendDataPage/SendData';
 import AnalizeData from '../AnalizeDataPage/AnalizeData';
-import LogButtonGroup from '../LogButtonGroup'; 
+import LogButtonGroup from '../LogButtonGroup';
+import InfoCard from "../AvailableDataPage/InfoCard/InfoCard";
 
 function MainPage() {
     return (
@@ -28,7 +29,7 @@ function MainPage() {
                         <Route path="/SendData" component={SendData}/>
                         <Route path="/AnalizeData" component={AnalizeData}/>
                     </Grid>
-                </Grid>        
+                </Grid>
             </BrowserRouter>
         </Container>
     );

@@ -4,6 +4,8 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import { SearchOutlined } from '@material-ui/icons';
 import { Pagination } from '@mui/material'
+import InfoCard from "./InfoCard/InfoCard";
+import {BrowserRouter} from "react-router-dom";
 
 function AvailableData() {
     return (
@@ -20,6 +22,9 @@ function AvailableData() {
             <SearchOutlined/>
         </IconButton>
       </Paper>
+          <InfoCard/>
+          <InfoCard/>
+          <InfoCard/>
       <Pagination count={10} />
       </>
     );
