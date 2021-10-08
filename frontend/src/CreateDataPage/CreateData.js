@@ -1,9 +1,11 @@
-import { Button } from '@mui/material';
+import * as React from "react";
+import SearchInput from "../SearchInput/SearchInput";
 
 function CreateData() {
     return (
         <div>
-            CreateData
+            <SearchInput text={"Введите название фичи"}/>
+            <SearchInput text={"Введите правило"}/>
         </div>
     );
 }
