@@ -1,4 +1,5 @@
 const express = require('express');
+const { auth } = require('express-openid-connect');
 
 const app = express();
 
@@ -18,11 +19,22 @@ app.env = process.env;
 
 if (app.env.DEBUG){
     app.use((req, res, next)=>{
-        console.log({"url":req.originalUrl, "method": req.method, "headers":req.headers, "body":req.body});
+        console.log({"url":req.originalUrl, "method": req.method, "headers":req.headers, "body":req.body, "oidc":req.oidc});
         next();
     })
 }
 
-app.listen(parseInt(app.env.PORT));
+const config = { 
+    authRequired: false,
+    auth0Logout: true,
+    secret: app.env.SECRET,
+    baseURL: app.env.BASE_URL,
+    clientID: app.env.CLIENT_ID,
+    issuerBaseURL: app.env.ISSUER_BASE_ID
+};
+
+app.use(auth(config));
+
+app.listen(parseInt(app.env.PORT) || 3000);
 
 module.exports = app;
