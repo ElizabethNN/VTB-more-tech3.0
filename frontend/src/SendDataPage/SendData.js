@@ -1,13 +1,61 @@
-import { Button, TextField } from '@mui/material';
+import {
+  Button,
+  InputBase,
+  Grid,
+  Paper,
+  Checkbox,
+  FormGroup,
+  FormControlLabel,
+} from "@mui/material";
+
+import BasicDatePicker from "../BasicDatePicker";
 
 function SendData() {
-    return (
-        <div>
-            <TextField id="standard-basic" label="Название датасета" variant="standard" />
-            <Button variant="outlined">Отправить датасет</Button>
+  return (
+    <Grid item xs={12}>
+      <Grid item xs={12}>
+        <Paper
+          component="form"
+          sx={{ p: "2px 4px", display: "flex", alignItems: "center" }}
+        >
+          <InputBase sx={{ ml: 1, flex: 1 }} placeholder="Название датасета" />
+        </Paper>
+      </Grid>
 
-        </div>
-    );
+      <Grid>
+        Начало сбора статистики
+        <BasicDatePicker />
+      </Grid>
+      <Grid>
+        Конец сбора статистики
+        <BasicDatePicker />
+      </Grid>
+
+      <Grid item xs={12}>
+        <FormGroup>
+          <FormControlLabel control={<Checkbox defaultChecked />} label="KFC" />
+
+          <FormControlLabel
+            control={<Checkbox defaultChecked />}
+            label="Macdonalds"
+          />
+
+          <FormControlLabel
+            control={<Checkbox defaultChecked />}
+            label="Burger king"
+          />
+
+          <FormControlLabel
+            control={<Checkbox defaultChecked />}
+            label="Subway"
+          />
+        </FormGroup>
+      </Grid>
+      <Grid>
+        <Button variant="outlined">Отправить датасет</Button>
+      </Grid>
+    </Grid>
+  );
 }
 
 export default SendData;

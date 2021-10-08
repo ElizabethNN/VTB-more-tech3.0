@@ -7,11 +7,19 @@ const LogButtonGroup = () => {
   const { loginWithRedirect } = useAuth0();
 
   return (
-    <ButtonGroup variant="text" aria-label="text button group">
-      <Button variant="outlined" color="success" onClick={() => loginWithRedirect()}>
+    <ButtonGroup variant="text" aria-label="text button group" fullWidth>
+      <Button
+        variant="outlined"
+        color="success"
+        onClick={() => loginWithRedirect()}
+      >
         Вход
       </Button>
-      <Button variant="outlined" color="error" onClick={() => logout({ returnTo: window.location.origin })}>
+      <Button
+        variant="outlined"
+        color="error"
+        onClick={() => logout({ returnTo: window.location.origin })}
+      >
         Выход
       </Button>
     </ButtonGroup>
