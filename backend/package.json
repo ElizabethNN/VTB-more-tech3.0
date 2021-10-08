@@ -10,9 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
+    "cross-fetch": "^3.1.4",
+    "datahub-client": "^0.5.8",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "express-openid-connect": "^2.5.1"
+    "express-openid-connect": "^2.5.1",
+    "graphql": "^15.6.1",
+    "graphql-request": "^3.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
