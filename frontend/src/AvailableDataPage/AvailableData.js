@@ -3,9 +3,11 @@ import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import { SearchOutlined } from '@material-ui/icons';
+import { Pagination } from '@mui/material'
 
 function AvailableData() {
     return (
+      <>
         <Paper
         component="form"
         sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
@@ -18,6 +20,8 @@ function AvailableData() {
             <SearchOutlined/>
         </IconButton>
       </Paper>
+      <Pagination count={10} />
+      </>
     );
 }
 

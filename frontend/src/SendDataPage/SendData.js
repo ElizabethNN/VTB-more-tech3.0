@@ -1,9 +1,11 @@
-import { Button } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 
 function SendData() {
     return (
         <div>
-            Отправка данных
+            <TextField id="standard-basic" label="Название датасета" variant="standard" />
+            <Button variant="outlined">Отправить датасет</Button>
+
         </div>
     );
 }
