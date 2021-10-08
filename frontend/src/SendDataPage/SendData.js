@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 function SendData() {
     return (
         <div>
-            SendData
+            Отправка данных
         </div>
     );
 }
