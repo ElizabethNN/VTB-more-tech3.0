@@ -1,8 +1,27 @@
 .container{
-    height:40px
+    max-width: 1000px;
 }
 
-.rectangle{
-    background:blue;
-    width: 1fr;
+.nameData{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.content{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.graphic{
+    border-style: dotted;
+    flex-grow: 1;
+    width: 60%
+}
+
+.infoData{
+    width: 40%;
 }
