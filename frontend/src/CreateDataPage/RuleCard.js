@@ -50,23 +50,10 @@ export default function RuleCard(props) {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Autocomplete
-                disablePortal
-                id="combo-box-demo"
-                options={datasets}
-                renderInput={(params) => <TextField  {...params} label="Выберите признак" />}
-            />
+            {props.content}
           </CardContent>
         </Collapse>
       </Card>
     </div>
   );
 }
-
-
-const datasets = [
-  { label: 'Название'},
-  { label: 'Год'},
-  { label: 'Время'},
-  { label: 'Пол'}
-]

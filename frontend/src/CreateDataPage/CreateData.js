@@ -2,12 +2,16 @@ import * as React from "react";
 import RuleCard from "./RuleCard";
 import ComboBox from "./ComboBox";
 import { Button } from "@mui/material";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import SampleContent from "./SampleContent";
+
 
 function CreateData() {
   return (
     <div>
-      <div style={{ margin: "30px 0px", display: "flex", flexDirection: "column" }}>
+      <div
+        style={{ margin: "30px 0px", display: "flex", flexDirection: "column" }}
+      >
         <ComboBox />
         <Button
           maxWidth
@@ -18,9 +22,12 @@ function CreateData() {
         </Button>
       </div>
 
-      <RuleCard title="Объединение" content={null} />
+      <RuleCard
+        title="Объединение"
+        content={ null}
+      />
       <RuleCard title="Временной промежуток" content={null} />
-      <RuleCard title="Сэмплирование" content={null} />
+      <RuleCard title="Сэмплирование" content={ <SampleContent/> } />
       <RuleCard title="Преобразование" content={null} />
     </div>
   );
