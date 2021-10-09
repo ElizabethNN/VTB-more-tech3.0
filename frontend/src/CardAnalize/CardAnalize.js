@@ -12,12 +12,15 @@ export default function CardAnalize(props) {
         <Card sx={{ minWidth: 275}}>
             <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                   {props.title}
+                   Название: {props.title}
                 </Typography>
                 <Typography  variant="h5" component="div">
                     <div className={s.tag}>
-                        {}
-                        <Tag text={"Теги"}/>
+                        <Tag text={"Тип"}/>
+                        <Tag text={"Платформа"}/>
+                        <Tag text={"Владелец"}/>
+                        <Tag text={"Статус"}/>
+                        <Tag text={"Тэг"}/>
                         {/*Теги <br/>*/}
                         {/*Ценность данных<br/>*/}
                         {/*Платформа<br/>*/}
