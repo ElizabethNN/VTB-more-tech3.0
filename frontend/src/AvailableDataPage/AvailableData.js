@@ -25,14 +25,14 @@ class AvailableData extends React.Component {
     totalData = this.state.data;
 
     return (
-      <div>
+      <div style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
         <SearchInput text={"Поиск"} icon={<SearchOutlined />} />
 
         {totalData !== undefined ?
           totalData.map((element) => (  
             <InfoCard id={element.id} title={element.dataset} key={element.id} />
           )) : <div>Loading.. please wait!</div> }
-        <Pagination count={10} />
+        <Pagination count={10}/>
       </div>
     );
   }
