@@ -14,11 +14,23 @@ export default function CardAnalize(props) {
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                    Название: {props.title}
                 </Typography>
-                <Typography  variant="h5" component="div">
+                <Typography component="div">
                     <div className={s.tag}>
                         <Tag text={"Тип"} inf={props.type}/>
                         <Tag text={"Платформа"} inf={props.platform}/>
                         <Tag text={"Владелец"} inf={props.owner}/>
+                        <Tag text={"Статус"} inf={props.status}/>
+                        <Tag text={"Тэг"} inf={props.tag}/>
+                        <Tag text={"Статус"} inf={props.status}/>
+                        <Tag text={"Тэг"} inf={props.tag}/>
+                        <Tag text={"Статус"} inf={props.status}/>
+                        <Tag text={"Тэг"} inf={props.tag}/>
+                        <Tag text={"Статус"} inf={props.status}/>
+                        <Tag text={"Тэг"} inf={props.tag}/>
+                        <Tag text={"Статус"} inf={props.status}/>
+                        <Tag text={"Тэг"} inf={props.tag}/>
+                        <Tag text={"Статус"} inf={props.status}/>
+                        <Tag text={"Тэг"} inf={props.tag}/>
                         <Tag text={"Статус"} inf={props.status}/>
                         <Tag text={"Тэг"} inf={props.tag}/>
                         {/*Теги <br/>*/}
