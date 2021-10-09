@@ -19,7 +19,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function InfoCard() {
+export default function InfoCard(props) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -30,7 +30,7 @@ export default function InfoCard() {
       <Card sx={{ my: 1 }}>
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            Data text
+            {props.info}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
@@ -45,7 +45,7 @@ export default function InfoCard() {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>РАФИК</Typography>
+            <Typography paragraph>ГРАФИК</Typography>
           </CardContent>
         </Collapse>
       </Card>
