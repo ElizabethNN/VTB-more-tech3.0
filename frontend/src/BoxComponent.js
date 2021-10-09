@@ -6,7 +6,7 @@ export default function BoxComponent() {
   return (
     <Button
       maxWidth
-      sx={{ p: 3, border: "1px dashed grey" }}
+      sx={{ my: 3, p: 5, border: "1px dashed grey" }}
       endIcon={<UploadFileIcon fontSize="large" />}
     >
       Загрузить датасет{" "}
