@@ -38,7 +38,6 @@ class AnalizeData extends React.Component {
           <div className={s.container}>
             <div className={s.content}>
               <div className={s.graphic}>
-                {/*<img src={graph} alt={"None"} />*/}
               </div>
               <div className={s.infoData}>
                 <CardAnalize 

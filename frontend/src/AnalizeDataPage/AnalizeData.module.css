@@ -2,7 +2,6 @@
     max-width: 1000px;
 }
 
-
 .content{
     padding-top: 20px;
     display: flex;
@@ -11,7 +10,8 @@
 }
 
 .graphic{
-    background-color: gold;
+    background-color: #1c54b2;
+    border-radius: 4px;
     width: 50%;
 }
 .graphic img{
@@ -20,5 +20,5 @@
 }
 
 .infoData{
-    width: 40%;
+    width: 45%;
 }
