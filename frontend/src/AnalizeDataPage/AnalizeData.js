@@ -6,8 +6,6 @@ function AnalizeData() {
   return (
 
     <div className={s.container}>
-      <div className={s.nameData}>Name</div>
-
       <div className={s.content}>
         <div className={s.graphic}>
            <img src={graph} alt={"None"}/>

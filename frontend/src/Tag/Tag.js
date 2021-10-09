@@ -1,13 +1,14 @@
 import * as React from 'react';
+import s from './Tag.module.css';
 
 
-
-
-export default function Tag() {
+function Tag(props) {
     return (
-        <div>
-
+        <div className={s.container}>
+            {props.text}:
         </div>
 
     );
 }
+
+export default Tag;
