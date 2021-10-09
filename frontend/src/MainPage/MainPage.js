@@ -26,7 +26,7 @@ function MainPage() {
           <Grid item xs={2} direction-xs-row-reverse>
             <LogButtonGroup />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={10}>
             <Route path="/AvailableData" component={AvailableData} />
             <Route path="/CreateData" component={CreateData} />
             <Route path="/SendData" component={SendData} />
