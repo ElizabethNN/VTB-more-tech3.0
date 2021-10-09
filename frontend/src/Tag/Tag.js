@@ -5,7 +5,7 @@ import s from './Tag.module.css';
 function Tag(props) {
     return (
         <div className={s.container}>
-            {props.text}:
+            {props.text}: {props.inf !== null ? props.inf : "none"}
         </div>
 
     );

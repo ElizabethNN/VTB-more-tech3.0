@@ -40,7 +40,14 @@ class AnalizeData extends React.Component {
                 <img src={graph} alt={"None"} />
               </div>
               <div className={s.infoData}>
-                <CardAnalize title={data.dataset.platform.name} />
+                <CardAnalize 
+                title={data.dataset.platform.name} 
+                type={data.dataset.type}
+                platform={data.dataset.platform.type}
+                owner={data.dataset.ownership.owners[0].owner.username}
+                status={data.dataset.status}
+                tag={data.dataset.tags.tags[0].tag.name}
+                  />
               </div>
             </div>
           </div>

@@ -9,24 +9,21 @@ import Tag from '../Tag/Tag'
 export default function CardAnalize(props) {
 
     return (
-        <Card sx={{ minWidth: 275}}>
+        <Card sx={{ minWidth: 275, height: "auto"}} >
             <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                    Название: {props.title}
                 </Typography>
                 <Typography  variant="h5" component="div">
                     <div className={s.tag}>
-                        <Tag text={"Тип"}/>
-                        <Tag text={"Платформа"}/>
-                        <Tag text={"Владелец"}/>
-                        <Tag text={"Статус"}/>
-                        <Tag text={"Тэг"}/>
+                        <Tag text={"Тип"} inf={props.type}/>
+                        <Tag text={"Платформа"} inf={props.platform}/>
+                        <Tag text={"Владелец"} inf={props.owner}/>
+                        <Tag text={"Статус"} inf={props.status}/>
+                        <Tag text={"Тэг"} inf={props.tag}/>
                         {/*Теги <br/>*/}
                         {/*Ценность данных<br/>*/}
-                        {/*Платформа<br/>*/}
                         {/*Свойства<br/>*/}
-                        {/*Владелец<br/>*/}
-                        {/*Статус<br/>*/}
                         {/*Статиска пользователя<br/>*/}
                         {/*Отношения<br/>*/}
                         {/*Схема<br/>*/}
