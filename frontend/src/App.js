@@ -1,5 +1,4 @@
 import './App.css';
-import AuthorizationPage from './AuthorizationPage/AuthorizationPage';
 import MainPage from "./MainPage/MainPage";
 import React from "react";
 

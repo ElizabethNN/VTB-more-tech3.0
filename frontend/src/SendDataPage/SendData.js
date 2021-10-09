@@ -21,17 +21,13 @@ function SendData() {
         component="form"
         sx={{ p: "2px 4px", display: "flex", alignItems: "center" }}
       >
-        <InputBase sx={{ ml: 1, flex: 1 }} placeholder="Название датасета" />
+        <InputBase sx={{ ml: 1, flex: 1, padding: "5px 0px" }} placeholder="Название датасета" />
       </Paper>
 
       <div style={{marginTop: 30, marginBottom: 2, display: "flex", alignItems: "center"}}>
-        <p style={{marginRight: 10}}>Начало сбора статистики</p>
-        <BasicDatePicker />
-      </div>
-
-      <div style={{marginTop: 2, marginBottom: 2, display: "flex", alignItems: "center"}}>
-        <p style={{marginRight: 10}}>Конец сбора статистики</p>
-        <BasicDatePicker />
+        <BasicDatePicker text="Начало сбора статистики" />
+        <div style={{width: 50}}></div>
+        <BasicDatePicker text="Конец сбора статистики"/>
       </div>
 
       <div style={{marginTop: 30, marginBottom: 5}}>

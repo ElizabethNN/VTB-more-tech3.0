@@ -5,6 +5,7 @@ import AvailableData from "../AvailableDataPage/AvailableData";
 import SendData from "../SendDataPage/SendData";
 import AnalizeData from "../AnalizeDataPage/AnalizeData";
 import LogButtonGroup from "../LogButtonGroup";
+import Authorization  from "../AuthorizationPage/Authorization"
 
 function MainPage() {
   return (
@@ -31,6 +32,7 @@ function MainPage() {
             <Route path="/CreateData" component={CreateData} />
             <Route path="/SendData" component={SendData} />
             <Route path="/AnalizeData" component={AnalizeData} />
+            <Route path="/Authorization" component={Authorization} />
           </Grid>
         </Grid>
       </BrowserRouter>
