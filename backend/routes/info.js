@@ -6,7 +6,7 @@ const {  gql } = require('graphql-request')
 const {graphQLClient} = require('../init')
 
 module.exports.getDatasetInfo = async (datasetUrn) => {
-    
+
     const query = gql`
         query getDataset($urn : String!) 
         {
@@ -50,6 +50,38 @@ module.exports.getDatasetInfo = async (datasetUrn) => {
 
     const variables = {urn: datasetUrn}
     
+    const data = await graphQLClient.request(query, variables)
+    return data;
+}
+
+module.exports.getFeatureInfo = async (featureUrn) => {
+    const query = gql`
+    query getDataset($urn : String!) {
+        mlFeatureTable(urn: $urn) {
+            name
+            description
+            ownership {
+                    owners {
+                        owner {
+                            ...on CorpUser {
+                                username
+                            }
+                            ...on CorpGroup {
+                                name
+                            }
+                        }
+                        type
+                    }
+                }
+            status {
+                removed
+            }
+            
+        }
+    }`
+
+    const variables = {urn: featureUrn}
+        
     const data = await graphQLClient.request(query, variables)
     return data;
 }
