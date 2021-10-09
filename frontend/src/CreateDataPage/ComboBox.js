@@ -1,21 +1,23 @@
-import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
+import * as React from "react";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
 
 export default function ComboBox() {
   return (
-    <Autocomplete 
+    <Autocomplete
       disablePortal
       id="combo-box-demo"
       options={datasets}
-      renderInput={(params) => <TextField  {...params} label="Выберите датасет" />}
+      renderInput={(params) => (
+        <TextField {...params} label="Выберите датасет" />
+      )}
     />
   );
 }
 
 const datasets = [
-  { label: 'Яндекс'},
-  { label: 'ВТБ'},
-  { label: 'Ростелеком'},
-  { label: '1С — БухОбслуживание'}
+  { label: "Яндекс" },
+  { label: "ВТБ" },
+  { label: "Ростелеком" },
+  { label: "1С — БухОбслуживание" },
 ];

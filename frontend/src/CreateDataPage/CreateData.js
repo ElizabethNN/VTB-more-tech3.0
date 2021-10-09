@@ -1,23 +1,21 @@
 import * as React from "react";
-import SearchInput from "../SearchInput/SearchInput";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import Divider from "@mui/material/Divider";
 import RuleCard from "./RuleCard";
 import ComboBox from "./ComboBox";
-import { IconButton } from "@mui/material";
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { Button } from "@mui/material";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 function CreateData() {
   return (
     <div>
-      <div style={{ margin: "30px 0px" }}>
+      <div style={{ margin: "30px 0px", display: "flex", flexDirection: "column" }}>
         <ComboBox />
-        <IconButton aria-label="delete" color="primary" size="large">
-          <AddCircleIcon />
-        </IconButton>
+        <Button
+          maxWidth
+          sx={{ my: 1, p: 1, border: "1px dashed grey" }}
+          endIcon={<AddCircleOutlineIcon fontSize="large" />}
+        >
+          Добавить датасет
+        </Button>
       </div>
 
       <RuleCard title="Объединение" content={null} />
