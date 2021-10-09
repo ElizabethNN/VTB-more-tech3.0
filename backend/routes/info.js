@@ -2,18 +2,11 @@ const express = require('express')
 const router = express.Router()
 const fetch = require('cross-fetch')
 const { response } = require('express')
-const { GraphQLClient, gql } = require('graphql-request')
-
+const {  gql } = require('graphql-request')
+const {graphQLClient} = require('../init')
 
 module.exports.getDatasetInfo = async (datasetUrn) => {
-    const server = 'http://80.80.96.244:8080/api/graphql'
-
-    const graphQLClient = new GraphQLClient(server, {
-        headers: {
-            authorization: 'Basic ZGF0YWh1YjpkYXRhaHVi'
-        }
-    })
-
+    
     const query = gql`
         query getDataset($urn : String!) 
         {
