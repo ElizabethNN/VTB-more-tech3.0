@@ -15,9 +15,9 @@ class AvailableData extends React.Component {
 
   async componentDidMount() {
     // GET request using fetch with async/await
-    const response = await fetch("http://localhost:3000/datasets/getAllTables");
+    const response = await fetch("http://80.80.96.244:3000/datasets/getAllTables");
     const data = await response.json();
-    this.setState({ data: data.data });
+    this.setState({ data: data });
   }
 
   render() {
@@ -29,8 +29,8 @@ class AvailableData extends React.Component {
         <SearchInput text={"Поиск"} icon={<SearchOutlined />} />
 
         {totalData !== undefined ?
-          totalData.map((element) => (
-            <InfoCard id={element.id} title={element.email} key={element.id} />
+          totalData.map((element) => (  
+            <InfoCard id={element.id} title={element.dataset} key={element.id} />
           )) : <div>Loading.. please wait!</div> }
         <Pagination count={10} />
       </div>

@@ -14,25 +14,39 @@ class AnalizeData extends React.Component {
 
   async componentDidMount() {
     // GET request using fetch with async/await
-    const response = await fetch(
-      "http://80.80.96.244:3000/datasets/getAllTables"
-    );
+    const response = await fetch("http://80.80.96.244:3000/datasets/getTableInfo", {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({id: "urn:li:dataset:(urn:li:dataPlatform:foo,bar,PROD)"}) // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    });
+    
     const data = await response.json();
-    this.setState({ id: data[0].id, title: data[0].title });
+    this.setState({ data: data });
+    console.log(data);
   }
 
   render() {
-    const { id, title } = this.state;
+    let data = [];
+    data = this.state.data;
+    console.log(data);
     return (
-      <div className={s.container}>
-        <div className={s.content}>
-          <div className={s.graphic}>
-            <img src={graph} alt={"None"} />
+      <div>
+        {data !== undefined ? (
+          <div className={s.container}>
+            <div className={s.content}>
+              <div className={s.graphic}>
+                <img src={graph} alt={"None"} />
+              </div>
+              <div className={s.infoData}>
+                <CardAnalize title={data.dataset.platform.name} />
+              </div>
+            </div>
           </div>
-          <div className={s.infoData}>
-            <CardAnalize id={id} title={title}/>
-          </div>
-        </div>
+        ) : (
+          <div>Loading.. please wait!</div>
+        )}
       </div>
     );
   }
