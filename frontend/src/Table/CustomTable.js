@@ -21,30 +21,31 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 
 
-function createData(name, calories, fat, carbs, protein) {
+function createData(keyWords, monthlySearch, desktop, mobile, phone,pad) {
     return {
-        name,
-        calories,
-        fat,
-        carbs,
-        protein,
+        keyWords,
+        monthlySearch,
+        desktop,
+        mobile,
+        phone,
+		pad
     };
 }
 
 const rows = [
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Donut', 452, 25.0, 51, 4.9),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-    createData('Honeycomb', 408, 3.2, 87, 6.5),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Jelly Bean', 375, 0.0, 94, 0.0),
-    createData('KitKat', 518, 26.0, 65, 7.0),
-    createData('Lollipop', 392, 0.2, 98, 0.0),
-    createData('Marshmallow', 318, 0, 81, 2.0),
-    createData('Nougat', 360, 19.0, 9, 37.0),
-    createData('Oreo', 437, 18.0, 63, 4.0),
+    createData('Онлайн кинотеатр', 160922, 78950, 81972, 77018, 4954),
+    createData('YouTube', 8178355, 4354823, 3823532, 3603229, 202303,),
+	createData('автомобиль', 19591191, 6148461, 13442730, 13171603, 271127),
+    createData('тейлор свифт', 42160, 12478, 29682, 29014, 668),
+	createData('27 сентября праздник', 195328, 24048, 171280, 168986, 2294),
+	createData('Россия 1 онлайн', 1001937, 605034, 396903, 352177, 44726),
+	createData('Википедия', 14182217, 4408194, 9774023, 9447016, 327007),
+	createData('Путин', 4761788, 1300179, 3461609, 3371523, 90086),
+	createData('День учителя', 13031762, 2798081, 10233681, 10143093, 87588),
+	createData('Веном 2', 4861803, 1911546, 2950257, 2867489, 82768),
+	createData('чемпионат', 9470583, 2777542, 6693041, 6434666, 258375),
+	createData('геншин', 7676715, 3601152, 4075563, 3975558, 100005),
+	createData('гугл', 13421901, 8596988, 4824913, 4697645, 127268),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -79,34 +80,40 @@ function stableSort(array, comparator) {
 
 const headCells = [
     {
-        id: 'name',
+        id: 'keyWords',
         numeric: false,
         disablePadding: true,
-        label: 'Dessert (100g serving)',
+        label: 'Ключевые слова',
     },
     {
-        id: 'calories',
+        id: 'monthlySearch',
         numeric: true,
         disablePadding: false,
-        label: 'Calories',
+        label: 'Всего показов в месяц',
     },
     {
-        id: 'fat',
+        id: 'desktop',
         numeric: true,
         disablePadding: false,
-        label: 'Fat (g)',
+        label: 'Десктоп',
     },
     {
-        id: 'carbs',
+        id: 'mobile',
         numeric: true,
         disablePadding: false,
-        label: 'Carbs (g)',
+        label: 'Мобильные',
     },
     {
-        id: 'protein',
+        id: 'phone',
         numeric: true,
         disablePadding: false,
-        label: 'Protein (g)',
+        label: 'Телефоны',
+    },
+    {
+        id: 'pad',
+        numeric: true,
+        disablePadding: false,
+        label: 'Планшеты',
     },
 ];
 
@@ -226,7 +233,6 @@ export default function CustomTable() {
     const [orderBy, setOrderBy] = React.useState('calories');
     const [selected, setSelected] = React.useState([]);
     const [page, setPage] = React.useState(0);
-    const [dense, setDense] = React.useState(false);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
     const handleRequestSort = (event, property) => {
@@ -289,7 +295,7 @@ export default function CustomTable() {
                     <Table
                         sx={{ minWidth: 750 }}
                         aria-labelledby="tableTitle"
-                        size={dense ? 'small' : 'medium'}
+                        size='medium'
                     >
                         <EnhancedTableHead
                             numSelected={selected.length}
@@ -305,17 +311,17 @@ export default function CustomTable() {
                             {stableSort(rows, getComparator(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row, index) => {
-                                    const isItemSelected = isSelected(row.name);
+                                    const isItemSelected = isSelected(row.keyWords);
                                     const labelId = `enhanced-table-checkbox-${index}`;
 
                                     return (
                                         <TableRow
                                             hover
-                                            onClick={(event) => handleClick(event, row.name)}
+                                            onClick={(event) => handleClick(event, row.keyWords)}
                                             role="checkbox"
                                             aria-checked={isItemSelected}
                                             tabIndex={-1}
-                                            key={row.name}
+                                            key={row.keyWords}
                                             selected={isItemSelected}
                                         >
                                             <TableCell padding="checkbox">
@@ -333,19 +339,20 @@ export default function CustomTable() {
                                                 scope="row"
                                                 padding="none"
                                             >
-                                                {row.name}
+                                                {row.keyWords}
                                             </TableCell>
-                                            <TableCell align="right">{row.calories}</TableCell>
-                                            <TableCell align="right">{row.fat}</TableCell>
-                                            <TableCell align="right">{row.carbs}</TableCell>
-                                            <TableCell align="right">{row.protein}</TableCell>
+                                            <TableCell align="right">{row.monthlySearch}</TableCell>
+                                            <TableCell align="right">{row.desktop}</TableCell>
+                                            <TableCell align="right">{row.mobile}</TableCell>
+                                            <TableCell align="right">{row.phone}</TableCell>
+                                            <TableCell align="right">{row.pad}</TableCell>
                                         </TableRow>
                                     );
                                 })}
                             {emptyRows > 0 && (
                                 <TableRow
                                     style={{
-                                        height: (dense ? 33 : 53) * emptyRows,
+                                        height: 53 * emptyRows,
                                     }}
                                 >
                                     <TableCell colSpan={6} />
