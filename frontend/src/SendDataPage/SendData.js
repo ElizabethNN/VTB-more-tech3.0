@@ -9,11 +9,12 @@ import {
 } from "@mui/material";
 
 import BasicDatePicker from "../BasicDatePicker";
+import BoxComponent from "../BoxComponent"
 
 function SendData() {
   return (
-    <Grid item xs={12}>
-      <Grid item xs={12}>
+    <Grid container spacing={2} xs={12}>
+      <Grid item xs={10}>
         <Paper
           component="form"
           sx={{ p: "2px 4px", display: "flex", alignItems: "center" }}
@@ -22,16 +23,27 @@ function SendData() {
         </Paper>
       </Grid>
 
-      <Grid>
-        Начало сбора статистики
-        <BasicDatePicker />
+      <Grid container item xs={10} direction="row" alignItems="center">
+        <Paper
+          component="form"
+          sx={{ p: "2px 4px", display: "flex", alignItems: "center" }}
+        >
+          Начало сбора статистики
+          <BasicDatePicker />
+        </Paper>
       </Grid>
-      <Grid>
-        Конец сбора статистики
-        <BasicDatePicker />
+      <Grid container item xs={10} direction="row" alignItems="center">
+      <Paper
+          component="form"
+          sx={{ p: "2px 4px", display: "flex", alignItems: "center" }}
+        >
+          Конец сбора статистики
+          <BasicDatePicker />
+        </Paper>
       </Grid>
 
-      <Grid item xs={12}>
+      <Grid item xs={10}>
+        Выберите, кто будет видеть Ваш датасет:
         <FormGroup>
           <FormControlLabel control={<Checkbox defaultChecked />} label="KFC" />
 
@@ -51,8 +63,13 @@ function SendData() {
           />
         </FormGroup>
       </Grid>
-      <Grid>
-        <Button variant="outlined">Отправить датасет</Button>
+
+      <Grid item xs={10}>
+        <BoxComponent/>
+      </Grid>
+
+      <Grid item xs={10}>
+        <Button variant="outlined">Отправить датасет </Button>
       </Grid>
     </Grid>
   );
