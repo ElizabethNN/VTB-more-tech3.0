@@ -2,6 +2,7 @@ import React from "react";
 import s from "./AnalizeData.module.css";
 import CardAnalize from "./../CardAnalize/CardAnalize";
 import graph from "../Graphic.png";
+import CustomTable from "../Table/CustomTable";
 
 class AnalizeData extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class AnalizeData extends React.Component {
           <div className={s.container}>
             <div className={s.content}>
               <div className={s.graphic}>
-                <img src={graph} alt={"None"} />
+                {/*<img src={graph} alt={"None"} />*/}
               </div>
               <div className={s.infoData}>
                 <CardAnalize 
@@ -49,6 +50,9 @@ class AnalizeData extends React.Component {
                 tag={data.dataset.tags.tags[0].tag.name}
                   />
               </div>
+            </div>
+            <div className={s.content}>
+              <CustomTable/>
             </div>
           </div>
         ) : (

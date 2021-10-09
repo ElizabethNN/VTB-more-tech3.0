@@ -11,7 +11,7 @@
 }
 
 .graphic{
-    border-style: dotted;
+    background-color: gold;
     width: 50%;
 }
 .graphic img{
