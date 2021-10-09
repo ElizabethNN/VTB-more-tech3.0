@@ -1,6 +1,7 @@
 import s from "./AnalizeData.module.css";
 import CardAnalize from "./../CardAnalize/CardAnalize";
 
+
 function AnalizeData() {
   return (
 
@@ -9,7 +10,7 @@ function AnalizeData() {
 
       <div className={s.content}>
         <div className={s.graphic}>
-           ffdffd
+           <img src="../Graphic.png" alt={"None"}/>
         </div>
         <div className={s.infoData}>
           <CardAnalize />
