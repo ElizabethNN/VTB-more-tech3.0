@@ -6,13 +6,13 @@ import s from './CardAnalize.module.css'
 import Tag from '../Tag/Tag'
 
 
-export default function CardAnalize() {
+export default function CardAnalize(props) {
 
     return (
         <Card sx={{ minWidth: 275}}>
             <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                   Название данных
+                   {props.title}
                 </Typography>
                 <Typography  variant="h5" component="div">
                     <div className={s.tag}>

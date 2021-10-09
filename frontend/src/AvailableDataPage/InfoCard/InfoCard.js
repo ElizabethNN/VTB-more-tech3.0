@@ -30,7 +30,7 @@ export default function InfoCard(props) {
       <Card sx={{ my: 1 }}>
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            {props.info}
+            {props.title}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
