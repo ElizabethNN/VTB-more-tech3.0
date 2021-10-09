@@ -8,6 +8,8 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Checkbox } from "@mui/material";
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -48,10 +50,23 @@ export default function RuleCard(props) {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            {props.content}
+            <Autocomplete
+                disablePortal
+                id="combo-box-demo"
+                options={datasets}
+                renderInput={(params) => <TextField  {...params} label="Выберите признак" />}
+            />
           </CardContent>
         </Collapse>
       </Card>
     </div>
   );
 }
+
+
+const datasets = [
+  { label: 'Название'},
+  { label: 'Год'},
+  { label: 'Время'},
+  { label: 'Пол'}
+]
