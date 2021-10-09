@@ -1,12 +1,12 @@
-import { Button, TextField, Grid, Box } from "@mui/material";
-import "./Authorization.css";
+import { Button, TextField } from "@mui/material";
+import s from "./Authorization.module.css";
 
 function Authorization() {
   return (
     <div className="Authorization" style={{display: "flex", flexDirection: "column", padding: "20%"}}>
-      <TextField className="item" id="outlined-basic" label="Логин" variant="outlined" />
-      <TextField className="item" id="outlined-basic" label="Пароль" variant="outlined" type="password" />
-      <Button className="item" variant="contained">Авторизация</Button>
+      <TextField className={s.item} id="outlined-basic" label="Логин" variant="outlined" />
+      <TextField className={s.item} id="outlined-basic" label="Пароль" variant="outlined" type="password" />
+      <Button className={s.item} variant="contained">Авторизация</Button>
     </div>
   );
 }
