@@ -12,7 +12,7 @@ import BasicDatePicker from "../BasicDatePicker";
 
 function SendData() {
   return (
-    <Grid item xs={12}>
+    <Grid item xs={12} container rowSpacing={5} >
       <Grid item xs={12}>
         <Paper
           component="form"
@@ -21,7 +21,8 @@ function SendData() {
           <InputBase sx={{ ml: 1, flex: 1 }} placeholder="Название датасета" />
         </Paper>
       </Grid>
-
+        <Grid  container
+               direction="row" item xs={12} >
       <Grid>
         Начало сбора статистики
         <BasicDatePicker />
@@ -30,7 +31,7 @@ function SendData() {
         Конец сбора статистики
         <BasicDatePicker />
       </Grid>
-
+        </Grid>
       <Grid item xs={12}>
         <FormGroup>
           <FormControlLabel control={<Checkbox defaultChecked />} label="KFC" />
