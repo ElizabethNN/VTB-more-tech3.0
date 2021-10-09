@@ -3,6 +3,7 @@ import { Pagination } from "@mui/material";
 import InfoCard from "./InfoCard/InfoCard";
 import SearchInput from "../SearchInput/SearchInput";
 import { SearchOutlined } from "@material-ui/icons";
+import { CircularProgress } from "@mui/material";
 
 class AvailableData extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class AvailableData extends React.Component {
         {totalData !== undefined ?
           totalData.map((element) => (  
             <InfoCard id={element.id} title={element.dataset} key={element.id} />
-          )) : <div>Loading.. please wait!</div> }
+          )) : <CircularProgress/> }
         <Pagination count={10}/>
       </div>
     );

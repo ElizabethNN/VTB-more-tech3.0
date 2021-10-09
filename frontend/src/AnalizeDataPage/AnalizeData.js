@@ -3,6 +3,8 @@ import s from "./AnalizeData.module.css";
 import CardAnalize from "./../CardAnalize/CardAnalize";
 import graph from "../Graphic.png";
 import CustomTable from "../Table/CustomTable";
+import { CircularProgress } from "@mui/material";
+
 
 class AnalizeData extends React.Component {
   constructor(props) {
@@ -55,7 +57,7 @@ class AnalizeData extends React.Component {
             </div>
           </div>
         ) : (
-          <div>Loading.. please wait!</div>
+          <CircularProgress/>
         )}
       </div>
     );
