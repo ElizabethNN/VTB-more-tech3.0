@@ -65,5 +65,3 @@ router.post('/dataset', async (req, res) => {
     const data = await this.getDatasetInfo(req.body.urn)
     res.send(data)
 })
-
-module.exports = router;

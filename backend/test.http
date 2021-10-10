@@ -1,0 +1,142 @@
+POST http://localhost:3000/datasets/createTable
+Content-Type: application/json
+
+{
+    "id":"лрм",
+    "table": {
+      "type": "DATASET",
+      "platform": {
+        "type": "DATA_PLATFORM",
+        "name": "foo",
+        "displayName": 0
+      },
+      "ownership": {
+        "owners": [
+          {
+            "owner": {
+              "username": "elizabethnn"
+            },
+            "type": "DATAOWNER"
+          }
+        ]
+      },
+      "status": 0,
+      "tags": 0
+    }
+}
+
+###
+GET http://localhost:3000/datasets/getAllTables
+
+### 
+
+POST http://localhost:3000/datasets/getTableInfo
+Content-Type: application/json
+
+{
+    "id": "urn:li:dataset:(urn:li:dataPlatform:foo,bar,PROD)"
+}
+
+###
+
+POST http://localhost:8080/entities?action=ingest
+Authorization: Basic base64-datahub-datahub
+
+{
+   "entity":{
+      "value":{
+         "com.linkedin.metadata.snapshot.CorpUserSnapshot":{
+            "urn":"urn:li:corpuser:yamusic",
+            "aspects":[
+               {
+                  "com.linkedin.identity.CorpUserInfo":{
+                     "active":true,
+                     "displayName":"Я.Музыка",
+                     "fullName":"Я.Музыка",
+                     "email":"music.yandex@yandex.ru"
+                  }
+               }
+            ]
+         }
+      }
+   }
+}
+###
+
+POST http://localhost:8080/entities?action=ingest
+Authorization: Basic base64-datahub-datahub
+
+{
+   "entity":{
+      "value":{
+         "com.linkedin.metadata.snapshot.DatasetSnapshot":{
+            "urn":"urn:li:dataset:(urn:li:dataPlatform:Я.Музыка,bar,PROD)",
+            "aspects":[
+               {
+                  "com.linkedin.common.Ownership":{
+                     "owners":[
+                        {
+                           "owner":"urn:li:corpuser:fbar",
+                           "type":"DATAOWNER"
+                        }
+                     ],
+                     "lastModified":{
+                        "time":0,
+                        "actor":"urn:li:corpuser:fbar"
+                     }
+                  }
+               },
+               {
+                  "com.linkedin.common.InstitutionalMemory":{
+                     "elements":[
+                        {
+                           "url":"https://www.linkedin.com",
+                           "description":"Sample doc",
+                           "createStamp":{
+                              "time":0,
+                              "actor":"urn:li:corpuser:fbar"
+                           }
+                        }
+                     ]
+                  }
+               },
+               {
+                  "com.linkedin.schema.SchemaMetadata":{
+                     "schemaName":"FooEvent",
+                     "platform":"urn:li:dataPlatform:Я.Музыка",
+                     "version":0,
+                     "created":{
+                        "time":0,
+                        "actor":"urn:li:corpuser:fbar"
+                     },
+                     "lastModified":{
+                        "time":0,
+                        "actor":"urn:li:corpuser:fbar"
+                     },
+                     "hash":"",
+                     "platformSchema":{
+                        "com.linkedin.schema.KafkaSchema":{
+                           "documentSchema":"{\"type\":\"record\",\"name\":\"MetadataChangeEvent\",\"namespace\":\"com.linkedin.mxe\",\"doc\":\"Kafka event for proposing a metadata change for an entity.\",\"fields\":[{\"name\":\"auditHeader\",\"type\":{\"type\":\"record\",\"name\":\"KafkaAuditHeader\",\"namespace\":\"com.linkedin.avro2pegasus.events\",\"doc\":\"Header\"}}]}"
+                        }
+                     },
+                     "fields":[
+                        {
+                           "fieldPath":"foo",
+                           "description":"Bar",
+                           "nativeDataType":"string",
+                           "type":{
+                              "type":{
+                                 "com.linkedin.schema.StringType":{
+                                    
+                                 }
+                              }
+                           }
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      }
+   }
+}

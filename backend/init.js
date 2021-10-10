@@ -1,5 +1,4 @@
 const express = require('express');
-const { auth } = require('express-openid-connect');
 const cors = require('cors');
 const app = express();
 
@@ -8,6 +7,7 @@ var corsOption = {
     origin: '*'
 }
 
+app.db = {};
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors(corsOption));
@@ -34,18 +34,6 @@ if (app.env.DEBUG){
         next();
     })
 }
-
-// auth config
-const config = { 
-    authRequired: false,
-    auth0Logout: true,
-    secret: app.env.SECRET,
-    baseURL: app.env.BASE_URL,
-    clientID: app.env.CLIENT_ID,
-    issuerBaseURL: app.env.ISSUER_BASE_ID
-};
-
-app.use(auth(config));
 
 app.listen(parseInt(app.env.PORT) || 3000);
 
