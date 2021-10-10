@@ -7,6 +7,7 @@ import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useHistory } from "react-router-dom";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -25,10 +26,18 @@ export default function InfoCard(props) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  let history = useHistory();
+
+  function handleCardClick() {
+    sessionStorage.setItem("id", props.id);
+    history.push("/AnalizeData");
+  }
+
   return (
     <div>
       <Card sx={{ my: 1 }}>
-        <CardContent>
+        <CardContent onClick={handleCardClick}>
           <Typography variant="body2" color="text.secondary">
             {props.title}
           </Typography>
@@ -45,7 +54,7 @@ export default function InfoCard(props) {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>ГРАФИК</Typography>
+            <Typography paragraph>{props.description}</Typography>
           </CardContent>
         </Collapse>
       </Card>

@@ -42,66 +42,66 @@ function SendData() {
       >
         <FormGroup>
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox  />}
             label="Яндекс"
           />
 
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox  />}
             label="КЭССБИ"
           />
 
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox  />}
             label="Национальная Юридическая служба"
           />
 
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox  />}
             label="Ростелеком"
           />
         </FormGroup>
 
         <FormGroup>
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox  />}
             label="Калуга Астрал"
           />
 
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox  />}
             label="Хэдхантер"
           />
 
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox  />}
             label="1С — БухОбслуживание"
           />
 
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox  />}
             label="Вымпелком"
           />
         </FormGroup>
 
         <FormGroup>
           <FormControlLabel 
-            control={<Checkbox defaultChecked />} 
+            control={<Checkbox  />} 
             label="ПА ЛОГИСТИКС" 
             />
 
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox  />}
             label="ЭСК"
           />
 
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox  />}
             label="Мэйл.Ру"
           />
 
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox  />}
             label="Межрегиональный ТранзитТелеком"
           />
         </FormGroup>

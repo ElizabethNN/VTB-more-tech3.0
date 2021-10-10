@@ -42,7 +42,8 @@ class AvailableData extends React.Component {
           totalData.map((element) => (
             <InfoCard
               id={element.id}
-              title={element.dataset}
+              title={element.dataset ? element.dataset : "none"}
+              description={element.description ? element.description : "none" }
               key={element.id}
             />
           ))

@@ -22,9 +22,9 @@ function CreateData() {
         </Button>
       </div>
 
-      <RuleCard title="Объединение" content={null} />
       <RuleCard title="Временной промежуток" content={<TimeRangeContent />} />
       <RuleCard title="Сэмплирование" content={<SampleContent />} />
+      <RuleCard title="Объединение" content={null} />
       <RuleCard title="Преобразование" content={null} />
     </div>
   );

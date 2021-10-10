@@ -1,9 +1,9 @@
 import React from "react";
 import s from "./AnalizeData.module.css";
 import CardAnalize from "./../CardAnalize/CardAnalize";
-import graph from "../Graphic.png";
+import diagram from "../Diagram.png";
 import CustomTable from "../Table/CustomTable";
-import { CircularProgress } from "@mui/material";
+import { CircularProgress } from "@mui/material"; 
 import { Box } from "@mui/system";
 
 class AnalizeData extends React.Component {
@@ -25,7 +25,7 @@ class AnalizeData extends React.Component {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id: "urn:li:dataset:(urn:li:dataPlatform:foo,bar,PROD)",
+          id: sessionStorage.getItem("id"),
         }), // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       }
     );
@@ -44,15 +44,17 @@ class AnalizeData extends React.Component {
         {data !== undefined ? (
           <div className={s.container}>
             <div className={s.content}>
-              <div className={s.graphic}></div>
+              <div className={s.graphic}>
+                <img src={diagram}/>
+              </div>
               <div className={s.infoData}>
                 <CardAnalize
-                  title={data.dataset.platform.name}
-                  type={data.dataset.type}
-                  platform={data.dataset.platform.type}
-                  owner={data.dataset.ownership.owners[0].owner.username}
-                  status={data.dataset.status}
-                  tag={data.dataset.tags.tags[0].tag.name}
+                  title= {data.dataset.platform.name ? data.dataset.platform.name : "none" }
+                  type={data.dataset.type ? data.dataset.type : "none" }
+                  platform={data.dataset.platform.type ? data.dataset.platform.type : "none" }
+                  owner={data.dataset.ownership ? data.dataset.ownership.owners[0].owner.username : "none" }
+                  status={data.dataset.status ? data.dataset.status : "none" }
+                  tag={data.dataset.tags ? data.dataset.tags.tags[0].tag.name : "none" }
                 />
               </div>
             </div>
