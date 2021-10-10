@@ -1,4 +1,5 @@
 const express = require('express');
+const {GraphQLClient} = require('graphql-request')
 const cors = require('cors');
 const app = express();
 
@@ -38,3 +39,11 @@ if (app.env.DEBUG){
 app.listen(parseInt(app.env.PORT) || 3000);
 
 module.exports = app;
+
+const graphqlPath = 'http://80.80.96.244:8080/api/graphql'
+module.exports.graphqlPath = graphqlPath
+module.exports.graphQLClient = new GraphQLClient(graphqlPath, {
+    headers: {
+        authorization: 'Basic ZGF0YWh1YjpkYXRhaHVi'
+    }
+})
